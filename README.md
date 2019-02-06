@@ -3,13 +3,13 @@ This is a comphrehensive meme generation package based in Python.
 
 |Contributors |Jack Yang| Akansha V |Chao Wang|
 |---|---|---|----|
-|slack handle|[]()|[]()|[]()|
-|github handle|[]()|[]()|[@chaomander2018](@chaomander2018)|
+|slack handle|[]()|[]()|[chao wang]()|
+|github handle|[]()|[]()|[@chaomander2018](https://github.com/chaomander2018)|
 
 ## Summary
 
 <div>
-<img src="imgs/theme.png">
+<img src="/img/theme.png">
 </div>
 
 This project is for users to apply filters. Perform 
