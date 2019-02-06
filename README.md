@@ -1,4 +1,4 @@
-<img src="https://soliloquywp.com/wp-content/uploads/2016/03/autobuild_addon-550x339.png" align="right" height="190" width="220"/>
+<img src="https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png" align="right" height="190" width="220"/>
 
 ## filterizePy
 This is a comprehensive meme generation package based in Python.
@@ -46,5 +46,5 @@ None
 
 ## Reference:
 Image Sources:
-- [soliloquywp.com](https://soliloquywp.com/wp-content/uploads/2016/03/autobuild_addon-550x339.png)
+- [filterize.net](https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png)
 - [quickmeme](http://www.quickmeme.com/img/2f/2f516b33efd7251b57bad254f1688131458e13d005972810676ea9622a6c4d29.jpg)
