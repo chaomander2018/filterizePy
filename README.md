@@ -35,14 +35,10 @@ This mirror filter function will use convolution to convert the original image t
 ![insert flag image before and after](img/mirror.png)
 
 
-## Python Ecosystems
+### Python Ecosystems
 There are many packages that perform image processing for accessorizing, color enhancement or special effects. In fact, the idea for this project came from the MDS cohort from last year. The intent behind this project is to build onto the intuition behind convolutional neural networks and how image filtering works while working on a relevant and practical project.
 * [MDS package 2018](https://github.com/UBC-MDS/InstaR/tree/v4.0)
 * [Zomato Android filter](https://github.com/Zomato/AndroidPhotoFilters)
-
-## Summary
-
-This package is designed for users to apply different filters on the any image.
 
 ## Pack Dependencies:
 None
