@@ -1,14 +1,18 @@
-# coloRize
-This is a cooler filter package based in R
+# memePy
+This is a comphrehensive meme generation package based in Python.
 
 |Contributors |Jack Yang| Akansha V |Chao Wang|
 |---|---|---|----|
 |slack handle|[]()|[]()|[]()|
+|github handle|[]()|[]()|[@chaomander2018](@chaomander2018)|
 
 ## Summary
 
-a summary paragraph that descibes the project at a high level
+<div>
+<img src="imgs/memeseverywhere.png" width="950" height="125" alt="table"/>
+</div>
 
+This project is for users to apply filters. Perform 
 ## Functions
 a bulleted list of the functions (and datasets if applicable) that will be included in the package (this should be a 1-2 sentence description for each function/dataset)
 - Apply a Sigular Color Filter
@@ -26,3 +30,10 @@ a paragraph describing where your packages fit into the Python and R ecosystems 
 
 1. % of images on the internect are processed. Meme is widely used in social media platform. Emphasize social media use. 
 2. This is a comprehensive package that 
+
+
+## Pack dependencies
+PIL
+
+
+## Reference:
