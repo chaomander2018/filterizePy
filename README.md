@@ -38,7 +38,6 @@ The meme generator will take the image and text as inputs, apply the text on the
 
 
 ## Value Proposition in Python Ecosystems
-a paragraph describing where your packages fit into the Python and R ecosystems (are there any other Python or R software packages that have the same/similar functionality? Provide links to any that do. if none exist, then clearly state this as well)
 
 Memes are so commonly shared that, according to Google Trends, "memes" are becoming a more popular search term than "Jesus."
 Memes are widely used in social media platform. This is the new way millennials communicate and express themselves with each other. 
