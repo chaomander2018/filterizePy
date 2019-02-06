@@ -15,7 +15,7 @@ In this project, we will be adopting the Git version control workflow. Individua
 
 **To submit changes to master branch**
 
-`git add .``<br>
+`git add .`<br>
 `git commit <meaningful message>`<br>
 `git push`<br>
-`submit pull request to main folder`
+`submit pull request to main repo`
