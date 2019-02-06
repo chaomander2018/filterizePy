@@ -32,7 +32,7 @@ This image crop function will crop and resize the original image into a 360x360 
 The flag filter will take the original image and apply a flag filter on top of the image.
 ![insert flag image before and after]()
 
-- Meme generator()
+- ### Meme generator
 The meme generator will take the image and text as inputs, apply the text on the top and bottom of the image.
 ![insert meme pictures]()
 
