@@ -1,5 +1,5 @@
 # memePy
-This is a comphrehensive meme generation package based in Python.
+This is a comprehensive meme generation package based in Python.
 
 |Contributors |Jack Yang| Akansha V |Chao Wang|
 |---|---|---|----|
@@ -12,28 +12,42 @@ This is a comphrehensive meme generation package based in Python.
 <img src="/img/theme.png">
 </div>
 
-This project is for users to apply filters. Perform 
+This package is designed for users to apply filters, add meme and crop images. 
+
 ## Functions
 a bulleted list of the functions (and datasets if applicable) that will be included in the package (this should be a 1-2 sentence description for each function/dataset)
-- Apply a Sigular Color Filter
+
+- ### Green Color Filter
+This green color filter converts the original image to a green scaled image. 
+Please see the original image and processed image below.
+
 ![insert green filter before and after]()
 
-- Photo Crop into a Sqaure/ FLAG filter
-![insert croped image before and after]()
+- ### Photo Crop
+This image crop function will crop and resize the original image into a 360x360 squared image (social media profile picture size). 
+![insert a cropped image before and after]()
+
+
+- ### Flag Filter
+The flag filter will take the original image and apply a flag filter on top of the image.
+![insert flag image before and after]()
 
 - Meme generator()
-![insert original picture]
+The meme generator will take the image and text as inputs, apply the text on the top and bottom of the image.
+![insert meme pictures]()
 
 
-## Value proposition in Python ecosystems
+## Value Proposition in Python Ecosystems
 a paragraph describing where your packages fit into the Python and R ecosystems (are there any other Python or R software packages that have the same/similar functionality? Provide links to any that do. if none exist, then clearly state this as well)
 
-1. % of images on the internect are processed. Meme is widely used in social media platform. Emphasize social media use. 
-2. This is a comprehensive package that 
+Memes are so commonly shared that, according to Google Trends, "memes" are becoming a more popular search term than "Jesus."
+Memes are widely used in social media platform. This is the new way millennials communicate and express themselves with each other. 
+So far we haven't found any similar python packages that combine meme generation, color filtering and image crop in one package. 
 
 
-## Pack dependencies
+## Pack Dependencies:
 PIL
 
 
 ## Reference:
+1. [More Than A Trend: Meme Marketing Is Here To Stay](https://www.forbes.com/sites/forbesagencycouncil/2018/07/19/more-than-a-trend-meme-marketing-is-here-to-stay/#4324d0322487)
