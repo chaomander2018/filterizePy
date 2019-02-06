@@ -1,52 +1,51 @@
-# memePy
+<img src="https://www.google.ca/search?q=image+filters&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHgK6ul6bgAhXvCjQIHY1cC1QQ_AUIDigB&biw=1067&bih=734#imgrc=mG74jjT8Y4E2nM" align="right" height="190" width="220"/>
+## memePy
 This is a comprehensive meme generation package based in Python.
 
-|Contributors |Jack Yang| Akansha V |Chao Wang|
+**Date:** 2019-02-05
+
+**License:** [MIT](https://opensource.org/licenses/MIT)
+
+#### Authors
+
+|Contributors |Jack Yang| Akansha Vashisth |Chao Wang|
 |---|---|---|----|
-|slack handle|[]()|[]()|[chao wang]()|
-|github handle|[]()|[]()|[@chaomander2018](https://github.com/chaomander2018)|
+|slack handle|[]()|[AKANSHA VASHISTH]()|[chao wang]()|
+|github handle|[]()|[akanshaVashisth](https://github.com/akanshaVashisth)|[@chaomander2018](https://github.com/chaomander2018)|
 
-## Summary
+### Overview
 
-<div>
-<img src="/img/theme.png">
-</div>
+This a Collaborative Software Development Project in which we will be working on three image processing filters using convolutions.
 
-This package is designed for users to apply filters, add meme and crop images. 
+### Functions
 
-## Functions
-a bulleted list of the functions (and datasets if applicable) that will be included in the package (this should be a 1-2 sentence description for each function/dataset)
-
-- ### Green Color Filter
+- #### Green Color Filter
 This green color filter converts the original image to a green scaled image. 
 Please see the original image and processed image below.
 
 ![insert green filter before and after]()
 
-- ### Photo Crop
-This image crop function will crop and resize the original image into a 360x360 squared image (social media profile picture size). 
+- #### Sharpen Filter
+This sharpen filter function will use convolution to convert the original image to a sharpened image.
 ![insert a cropped image before and after]()
 
 
-- ### Flag Filter
-The flag filter will take the original image and apply a flag filter on top of the image.
+- #### Mirror Filter
+This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be tranformed into the right side and the right side of the original image will be transformed into the left side.
 ![insert flag image before and after]()
-
-- ### Meme generator
-The meme generator will take the image and text as inputs, apply the text on the top and bottom of the image.
-![insert meme pictures]()
 
 
 ## Value Proposition in Python Ecosystems
 
-Memes are so commonly shared that, according to Google Trends, "memes" are becoming a more popular search term than "Jesus."
-Memes are widely used in social media platform. This is the new way millennials communicate and express themselves with each other. 
-So far we haven't found any similar python packages that combine meme generation, color filtering and image crop in one package. 
 
+
+## Summary
+
+This package is designed for users to apply different filters on the any image. 
 
 ## Pack Dependencies:
-PIL
+None
 
 
 ## Reference:
-1. [More Than A Trend: Meme Marketing Is Here To Stay](https://www.forbes.com/sites/forbesagencycouncil/2018/07/19/more-than-a-trend-meme-marketing-is-here-to-stay/#4324d0322487)
+Image Source: [image+filters](https://www.google.ca/search?q=image+filters&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHgK6ul6bgAhXvCjQIHY1cC1QQ_AUIDigB&biw=1067&bih=734#imgrc=mG74jjT8Y4E2nM:)
