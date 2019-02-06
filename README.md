@@ -9,7 +9,7 @@ This is a comphrehensive meme generation package based in Python.
 ## Summary
 
 <div>
-<img src="imgs/memeseverywhere.png" width="950" height="125" alt="table"/>
+<img src="imgs/theme.png">
 </div>
 
 This project is for users to apply filters. Perform 
