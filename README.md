@@ -11,7 +11,7 @@ This is a comprehensive meme generation package based in Python.
 
 |Contributors |Jack Yang| Akansha Vashisth |Chao Wang|
 |---|---|---|----|
-|github handle|[]()|[akanshaVashisth](https://github.com/akanshaVashisth)|[@chaomander2018](https://github.com/chaomander2018)|
+|github handle|[@jackattackyang](https://github.com/jackattackyang)|[@akanshaVashisth](https://github.com/akanshaVashisth)|[@chaomander2018](https://github.com/chaomander2018)|
 
 ### Overview
 
@@ -35,9 +35,10 @@ This mirror filter function will use convolution to convert the original image t
 ![insert flag image before and after](img/mirror.png)
 
 
-## Value Proposition in Python Ecosystems
-
-
+## Python Ecosystems
+There are many packages that perform image processing for accessorizing, color enhancement or special effects. In fact, the idea for this project came from the MDS cohort from last year. The intent behind this project is to build onto the intuition behind convolutional neural networks and how image filtering works while working on a relevant and practical project.
+* [MDS package 2018](https://github.com/UBC-MDS/InstaR/tree/v4.0)
+* [Zomato Android filter](https://github.com/Zomato/AndroidPhotoFilters)
 
 ## Summary
 
