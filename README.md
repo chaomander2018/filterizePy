@@ -15,7 +15,7 @@ This is a comprehensive meme generation package based in Python.
 
 ### Overview
 
-This a Collaborative Software Development Project in which we will be working on three image processing filters using convolutions.
+This is a Collaborative Software Development Project in which we will be working on three image processing filters using convolutions.
 
 ![theme](img/theme.png)
 ### Functions
