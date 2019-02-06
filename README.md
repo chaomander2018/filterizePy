@@ -1,6 +1,6 @@
-<img src="https://www.google.ca/search?q=image+filters&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHgK6ul6bgAhXvCjQIHY1cC1QQ_AUIDigB&biw=1067&bih=734#imgrc=mG74jjT8Y4E2nM:" align="right" height="190" width="220"/>
+<img src="https://tiffen.com/wp-content/uploads/2016/03/Graduated-ND-Yosemite.jpg" align="right" height="190" width="220"/>
 
-## memePy
+## filterizePy
 This is a comprehensive meme generation package based in Python.
 
 **Date:** 2019-02-05
@@ -49,4 +49,4 @@ None
 
 
 ## Reference:
-Image Source: [image+filters](https://www.google.ca/search?q=image+filters&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiHgK6ul6bgAhXvCjQIHY1cC1QQ_AUIDigB&biw=1067&bih=734#imgrc=mG74jjT8Y4E2nM:)
+Image Source: [tiffen.com](https://tiffen.com/wp-content/uploads/2016/03/Graduated-ND-Yosemite.jpg)
