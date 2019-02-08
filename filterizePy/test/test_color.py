@@ -3,7 +3,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at https://mit-license.org
 
-# Feburary 2019
+# February 2019
 # This script tests color function of filterizePy package.
 
 
