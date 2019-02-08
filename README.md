@@ -43,7 +43,6 @@ There are many packages that perform image processing for accessorizing, color e
 ## Pack Dependencies:
 None
 
-
 ## Reference:
 Image Sources:
 - [filterize.net](https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png)
