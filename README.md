@@ -43,6 +43,5 @@ There are many packages that perform image processing for accessorizing, color e
 ## Pack Dependencies:
 None
 
-
 ## Reference:
 Image Source: [tiffen.com](https://tiffen.com/wp-content/uploads/2016/03/Graduated-ND-Yosemite.jpg)
