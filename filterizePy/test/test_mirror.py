@@ -4,12 +4,9 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from sharpen.py.
+# This script tests the function from mirror.py.
 
 # This script tests the mirror function of the filterizePy package.
-# This function sharpens an image.
-# Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
-# Output : A mirrored image in the same format as the input image file type
 
 from skimage import io
 import pytest
