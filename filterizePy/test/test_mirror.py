@@ -7,15 +7,18 @@
 # This script tests the function from mirror.py.
 
 # This script tests the mirror function of the filterizePy package.
+import sys
+sys.path.append('../../')
 
 from skimage import io
 import pytest
 import numpy as np
-from filterize import mirror
+from filterizePy.mirror import mirror
 
-input_img = io.imread('../img/input_image.png')
+input_img = "../../img/input_img.jpg"
 mirror(input_img)
-output_img = io.imread('../img/mirror_img.png')
+input_img = io.imread('../../img/input_img.jpg')
+output_img = io.imread('../../img/reversed_input_img.jpg')
 
 def test_flip_same_size(input_img, output_img):
     # checks input and output size
@@ -36,7 +39,7 @@ def test_flip_column_flip_mid(input_img, output_img):
         mid = n//2
         assert np.array_equal(input_img[:,mid,:], output_img[:,mid,:]), "Error in middle transform column"
 
-def test_flip_file_path():
+def reversed_input_img():
     with pytest.raises(FileNotFoundError):
         mirror("not a file path")
 
@@ -44,10 +47,13 @@ def test_flip_invalid_input():
     with pytest.raises(AttributeError):
         mirror(123)
 
-def test_flip_invalid_input():
+def test_flip_invalid_input_2():
     with pytest.raises(TypeError):
         mirror()
 
-def test_flip_invalid_input():
-    with pytest.raises(SyntaxError):
-        mirror(,)
+reversed_input_img()
+test_flip_invalid_input()
+test_flip_invalid_input_2()
+test_flip_same_size(input_img, output_img)
+# test_flip_column_flip(input_img, output_img)
+test_flip_column_flip_mid(input_img, output_img)

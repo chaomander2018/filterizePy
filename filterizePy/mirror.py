@@ -11,5 +11,34 @@
 # Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
 # Output : A mirrored image in the same format as the input image file type
 
-def mirror():
-    
+# Example input path: "../../img/mirror_img.png"
+# Example output path: "../../img/reversed_mirror_img.png"
+
+from skimage import io
+import numpy as np
+
+def mirror(input_path):
+
+    try:
+        input_img = io.imread(input_path)
+    except FileNotFoundError:
+        print("Please enter a valid file path")
+        raise
+    except AttributeError:
+        print("Please entire a valid path as a string")
+        raise
+    except TypeError:
+        print("Please enter a valid path as a string")
+        raise
+    except Exception as error:
+        print(error)
+        raise
+
+    # Regex that customizes output file name
+    index = input_path.rfind("/") + 1
+    output_path = input_path[:index] + "reversed_" + input_path[index:]
+
+    io.imsave(output_path, input_img[:,::-1,:])
+
+
+# mirror("../img/sfs.png")
