@@ -27,9 +27,6 @@ def mirror(input_path):
     except AttributeError:
         print("Please entire a valid path as a string")
         raise
-    except TypeError:
-        print("Please enter a valid path as a string")
-        raise
     except Exception as error:
         print(error)
         raise

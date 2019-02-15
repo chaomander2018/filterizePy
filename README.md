@@ -13,6 +13,11 @@ This is a comprehensive image filtering package based in Python.
 |---|---|---|----|
 |github handle|[@jackattackyang](https://github.com/jackattackyang)|[@akanshaVashisth](https://github.com/akanshaVashisth)|[@chaomander2018](https://github.com/chaomander2018)|
 
+### Usage and Installation
+
+`pip install git+https://github.com/UBC-MDS/filterizePy` <br>
+`from filterizePy import *`
+
 ### Overview
 
 This is a Collaborative Software Development Project in which we will be working on three image processing filters using convolutions.
