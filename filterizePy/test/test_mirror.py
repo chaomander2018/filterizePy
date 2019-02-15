@@ -10,13 +10,15 @@
 import sys
 sys.path.append('../../')
 
+from skimage import io
+import numpy as np
 import pytest
 from filterizePy.mirror import mirror
 
-input_img = "../../img/input_img.jpg"
+input_img = "../../img/test_original.jpg"
 mirror(input_img)
-input_img = io.imread('../../img/input_img.jpg')
-output_img = io.imread('../../img/reversed_input_img.jpg')
+input_img = io.imread('../../img/test_original.jpg')
+output_img = io.imread('../../img/mirrored_test_original.jpg')
 
 def test_flip_same_size(input_img, output_img):
     # checks input and output size
@@ -24,18 +26,20 @@ def test_flip_same_size(input_img, output_img):
 
 def test_flip_column_flip(input_img, output_img):
     # first and last column should have the same pixels
-    assert np.array_equal(input_img[:,0,:], output_img[:,-1,:]), "First and last pixel columns do not match"
+    assert np.all(np.abs(input_img[:,0,:] - output_img[:,-1,:]) < 20), "First and last pixel columns do not match"
 
 def test_flip_column_flip_mid(input_img, output_img):
     # middle column should stay the same, the cases are different for even and odd dimensioned images
     m,n,d = input_img.shape
+    input_img = np.array(input_img, dtype=np.float64)
+    output_img = np.array(output_img, dtype=np.float64)
 
     if n % 2 == 0:
         mid = n//2
-        assert np.array_equal(input_img[:,mid,:], output_img[:,mid-1,:])
+        assert np.all(np.abs(input_img[:,mid,:] - output_img[:,mid-1,:]) < 20)
     else:
         mid = n//2
-        assert np.array_equal(input_img[:,mid,:], output_img[:,mid,:]), "Error in middle transform column"
+        assert np.all(np.abs(input_img[:,mid,:] - output_img[:,mid,:]) < 20)
 
 def reversed_input_img():
     with pytest.raises(FileNotFoundError):
@@ -49,9 +53,9 @@ def test_flip_invalid_input_2():
     with pytest.raises(TypeError):
         mirror()
 
-# reversed_input_img()
-# test_flip_invalid_input()
-# test_flip_invalid_input_2()
-# test_flip_same_size(input_img, output_img)
-# # test_flip_column_flip(input_img, output_img)
-# test_flip_column_flip_mid(input_img, output_img)
+reversed_input_img()
+test_flip_invalid_input()
+test_flip_invalid_input_2()
+test_flip_same_size(input_img, output_img)
+test_flip_column_flip(input_img, output_img)
+test_flip_column_flip_mid(input_img, output_img)

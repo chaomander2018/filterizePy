@@ -36,9 +36,6 @@ def mirror(input_path):
 
     # Regex that customizes output file name
     index = input_path.rfind("/") + 1
-    output_path = input_path[:index] + "reversed_" + input_path[index:]
+    output_path = input_path[:index] + "mirrored_" + input_path[index:]
 
     io.imsave(output_path, input_img[:,::-1,:])
-
-
-# mirror("../img/sfs.png")
