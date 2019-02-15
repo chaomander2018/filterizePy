@@ -10,9 +10,7 @@
 import sys
 sys.path.append('../../')
 
-from skimage import io
 import pytest
-import numpy as np
 from filterizePy.mirror import mirror
 
 input_img = "../../img/input_img.jpg"
@@ -51,9 +49,9 @@ def test_flip_invalid_input_2():
     with pytest.raises(TypeError):
         mirror()
 
-reversed_input_img()
-test_flip_invalid_input()
-test_flip_invalid_input_2()
-test_flip_same_size(input_img, output_img)
-# test_flip_column_flip(input_img, output_img)
-test_flip_column_flip_mid(input_img, output_img)
+# reversed_input_img()
+# test_flip_invalid_input()
+# test_flip_invalid_input_2()
+# test_flip_same_size(input_img, output_img)
+# # test_flip_column_flip(input_img, output_img)
+# test_flip_column_flip_mid(input_img, output_img)
