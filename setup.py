@@ -9,5 +9,4 @@ setup(
     url='https://github.com/UBC-MDS/filterizePy',
     license='LICENSE.md',
     description='performs image transformations: coloring, mirroring, sharpening',
-    long_description=open('README.txt').read()
 )
