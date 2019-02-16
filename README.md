@@ -23,32 +23,22 @@ This is a comprehensive image filtering package based in Python.
 This is a Collaborative Software Development Project in which we will be working on three image processing filters using convolutions.
 
 ![theme](img/theme.png)
-### Functions
+
+### Functions  (see details in milestone 1 writeup)
 
 - #### Green Color Filter `greenscale()`
 This green color filter converts the original image to a green scaled image.
 Please see the original image and processed image below.
-![insert green filter before and after](img/color_filter.png)
 
 - #### Sharpen Filter `sharpen_image()`
 This sharpen filter highlights edges and fine details in an image.
-![insert a cropped image before and after](img/sharpen.png)
-
 
 - #### Mirror Filter `mirror()`
 This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
-![insert flag image before and after](img/mirror.png)
 
-
-### Python Ecosystems
-There are many packages that perform image processing for accessorizing, color enhancement or special effects. In fact, the idea for this project came from the MDS cohort from last year. The intent behind this project is to build onto the intuition behind convolutional neural networks and how image filtering works while working on a relevant and practical project.
-* [MDS package 2018](https://github.com/UBC-MDS/InstaR/tree/v4.0)
-* [Zomato Android filter](https://github.com/Zomato/AndroidPhotoFilters)
+## Test instructions:
 
 ## package Dependencies:
-None
-
-## Reference:
-Image Sources:
-- [filterize.net](https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png)
-- [quickmeme](http://www.quickmeme.com/img/2f/2f516b33efd7251b57bad254f1688131458e13d005972810676ea9622a6c4d29.jpg)
+PIL
+skimage
+numpy
