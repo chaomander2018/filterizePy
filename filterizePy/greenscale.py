@@ -1,5 +1,6 @@
 import numpy as np
 import skimage.io
+from PIL import Image
 
 def greenscale(input_path):
     '''
@@ -7,8 +8,11 @@ def greenscale(input_path):
     Input: input_path: string, path for the input image file
            output_path: string, path for the output image file
     Output: an image file at the specified output path
+    
+    Example: greenscale("../img/test_image.png")
     '''
-    # exception handling
+    
+    # Exception handling
     try:
         img = skimage.io.imread(input_path)
     except AttributeError:
@@ -27,20 +31,18 @@ def greenscale(input_path):
     
     index = input_path.rfind("/") + 1
     output_path = input_path[:index] + "gs_" + input_path[index:]
-    height = img.shape[0]
-    width = img.shape[1]
-
-    img_gs = np.zeros(img.shape, dtype = "uint8")
+    
+    # Converting any format(like RGBA) to RGB
+    img = Image.open(input_path).convert('RGB')
+    
+    img = np.asarray(img)
+    width, height, d = img.shape
+    img_gs = np.zeros(img.shape)
 
     for i in range(height):
         for j in range(width):
-            R = img[i][j][0]
-            G = img[i][j][1]
-            B = img[i][j][2]
-
-            green = round(0.5*G)
-
-            img_gs[i][j][1] = green
-
+            # Assigning new green pixels
+            img_gs[j][i][1] = round(0.9*img[j][i][1])
             
-    return skimage.io.imsave(output_path, img_gs)
+    out = Image.fromarray(np.uint8(img_gs))
+    out.save(output_path)
