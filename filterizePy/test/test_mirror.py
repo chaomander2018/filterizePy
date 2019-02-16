@@ -14,15 +14,6 @@ import numpy as np
 import pytest
 from filterizePy.mirror import mirror
 
-# class test_mirror:
-#     def __init__(self):
-#         self.input_img = "../../img/test_original.jpg"
-#
-#     def mirror_image(self):
-#         mirror(input_img)
-#         input_img = io.imread('../../img/test_original.jpg')
-#         output_img = io.imread('../../img/mirrored_test_original.jpg')
-
 def test_flip_same_size():
     # checks input and output size
     input_img = "../../img/test_original.jpg"
