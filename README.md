@@ -16,7 +16,7 @@ This is a comprehensive image filtering package based in Python.
 ### Usage and Installation
 
 `pip install git+https://github.com/UBC-MDS/filterizePy` <br>
-`from filterizePy import *`
+`from filterizePy.mirror import <DESIRED FUNCTION>`
 
 ### Overview
 
