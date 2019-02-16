@@ -24,14 +24,14 @@ def test_input_type():
     """
     This function checks the input image format is one of the valid image formats.
     """
-    assert imghdr.what("img/mirror.png") == 'png', "Not a png file, please try again"
+    assert imghdr.what("img/mirror.png") in ['png','jpeg','gif','bmp','jpg'], "Not a accepted image file, please try again"
 
 def test_output_type():
     """
     This function checks the output image format is one of the valid image formats.
     """
     output_path = sharpen_image("img/mirror.png")
-    assert imghdr.what(output_path) == imghdr.what("img/mirror.png"), "Not a png file, please try again"
+    assert imghdr.what(output_path) == imghdr.what("img/mirror.png"), "file formats do not match, please try again"
 
 
 

@@ -23,7 +23,7 @@ def sharpen_image(input_path):
     Parameters
     ----------
     input_img: string
-    A file path to a image. The image should be either .png, .jpeg,.gif, .bmp, or .jpg.
+    A file path to a image. The image should be either .png, .jpeg, .gif, .bmp, or .jpg.
 
     Returns
     -------
@@ -34,7 +34,10 @@ def sharpen_image(input_path):
     Example
     -------
     sharpen("../img/test_image.png")
+
+    Returns"../img/sharpened_test_image.png"
     """
+    # Read the image
     try:
         input_img = skimage.io.imread(input_path)
 
@@ -53,13 +56,11 @@ def sharpen_image(input_path):
         raise
 
 
-    # Read the image
-    #input_img = plt.imread(input_path) # read in the image
-
     # breakdown to 3 images
     r_img = input_img[:, :, 0]
     g_img = input_img[:, :, 1]
     b_img = input_img[:, :, 2]
+    max_img=input_img[:, :, 3]
 
 
     # Construct the sharpen filter
@@ -84,15 +85,18 @@ def sharpen_image(input_path):
     b_output_img = np.maximum(0, b_output_img)
     b_output_img = np.minimum(1, b_output_img)
 
+    # Stay unchanged for the last dimenssion
+    max_output_img = np.maximum(0, max_img)
+    max_output_img = np.minimum(1, max_img)
 
     # put back the three sharpened image
-    output_img = np.dstack((r_output_img, g_output_img,b_output_img))
+    output_img = np.dstack((r_output_img, g_output_img,b_output_img, max_output_img))
 
     # Get the input image path and generate the output path
     index = input_path.rfind("/") + 1
     output_path = input_path[:index] + "sharpened_" + input_path[index:]
 
-
+    # save the output image to the same file path as the input image file path
     skimage.io.imsave(output_path, output_img)
-    #output_path = path+output_name
+    # return the output image file path
     return output_path
