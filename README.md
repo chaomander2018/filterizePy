@@ -3,7 +3,7 @@
 ## filterizePy
 This is a comprehensive image filtering package based in Python.
 
-**Date:** 2019-02-05
+**Date:** 2019-02-16
 
 **License:** [MIT](https://opensource.org/licenses/MIT)
 
@@ -25,18 +25,18 @@ This is a Collaborative Software Development Project in which we will be working
 ![theme](img/theme.png)
 ### Functions
 
-- #### Green Color Filter
+- #### Green Color Filter `greenscale()`
 This green color filter converts the original image to a green scaled image.
 Please see the original image and processed image below.
 ![insert green filter before and after](img/color_filter.png)
 
-- #### Sharpen Filter
-This sharpen filter function will use convolution to convert the original image to a sharpened image.
+- #### Sharpen Filter `sharpen_image()`
+This sharpen filter highlights edges and fine details in an image.
 ![insert a cropped image before and after](img/sharpen.png)
 
 
-- #### Mirror Filter
-This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be tranformed into the right side and the right side of the original image will be transformed into the left side.
+- #### Mirror Filter `mirror()`
+This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
 ![insert flag image before and after](img/mirror.png)
 
 
@@ -45,7 +45,7 @@ There are many packages that perform image processing for accessorizing, color e
 * [MDS package 2018](https://github.com/UBC-MDS/InstaR/tree/v4.0)
 * [Zomato Android filter](https://github.com/Zomato/AndroidPhotoFilters)
 
-## Pack Dependencies:
+## package Dependencies:
 None
 
 ## Reference:
