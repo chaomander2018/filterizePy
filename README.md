@@ -39,20 +39,20 @@ This mirror filter function will use convolution to convert the original image t
 
 1. **greenscale(input_path)**
 
-Argument:
-- ```input_path```: path to input image
+Input Parameter:
+- ```input_path```: Input image path
 - *Example*: ```greenscale("./img.jpg")```
 
 2. **sharpen_image(input_path)**
 
-Argument:
-- ```input_path```: path to input image
+Input Parameter:
+- ```input_path```: Input image path
 - *Example*: ```sharpen_image("./img.jpg")```
 
 3. **mirror(input_path)**
 
-Arguments:
-- ```input_path```: path to input image
+Input Parameter:
+- ```input_path```: Input image path
 - *Example*: ```mirror("./img.jpg")```
 
 
