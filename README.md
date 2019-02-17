@@ -45,24 +45,19 @@ There are many packages that perform image processing for accessorizing, color e
 
 Input Parameter:
 - ```input_path```: Input image path
-- *Example*: ```greenscale("./img.jpg")```
+- *Example*: ```greenscale.greenscale("<input image>")```
 
 2. **sharpen_image(input_path)**
 
 Input Parameter:
 - ```input_path```: Input image path
-- *Example*: ```sharpen_image("./img.jpg")```
+- *Example*: ```sharpen.sharpen_image("<input image>")```
 
 3. **mirror(input_path)**
 
 Input Parameter:
 - ```input_path```: Input image path
-- *Example*: ```mirror("./img.jpg")```
-
-
-### Test instructions:
-
-
+- *Example*: ```mirror.mirror("<input image>")```
 
 ### Package Dependencies:
 - PIL
