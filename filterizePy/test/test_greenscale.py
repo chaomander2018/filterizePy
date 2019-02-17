@@ -60,8 +60,6 @@ def check_output_type():
 def test_input_img():
     input_img = "../../img/test_original.jpg"
     greenscale(input_img)
-    input_img = skimage.io.imread('../../img/test_original.jpg')
-    output_img = skimage.io.imread('../../img/gs_test_original.jpg')
     with pytest.raises(FileNotFoundError):
         greenscale("not a file path")
 
