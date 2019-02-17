@@ -4,10 +4,17 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # This script sharpens an image.
-# Input  : A path to an image in .png, .jpeg,.gif,.bmp, .jpg format
-# Output : A path to a sharpened image in the same format as the input image file type
+# Input  : A path to an image in .png format
+# Output : A path to a sharpened .png image
 
-def sharpen(input_img):
+import numpy as np
+import skimage.io
+from scipy.signal import convolve2d
+#from keras.preprocessing.image import img_to_array, load_img
+import matplotlib.pyplot as plt
+import os
+
+def sharpen_image(input_path):
     """This function sharpens an image.
 
     This function read the input image path and apply the sharpen convolution filter to the image.
@@ -15,25 +22,81 @@ def sharpen(input_img):
 
     Parameters
     ----------
-    input_img: A file path to a image
-    The image should be either .png, .jpeg,.gif, .bmp, or .jpg.
+    input_img: string
+    A file path to a image. The image should be either .png, .jpeg, .gif, .bmp, or .jpg.
 
     Returns
     -------
-    output_img: an image file which have the same file format as the inut image.
+    output_img: string
+    An image file which have the same file format as the inut image.
     This is the sharpened image, it has the same dimension and file type as the input_img
 
     Example
     -------
     sharpen("../img/test_image.png")
+
+    Returns"../img/sharpened_test_image.png"
     """
-    input_img = skimage.io.imread(input_img)
+    # Read the image
+    try:
+        input_img = skimage.io.imread(input_path)
+
+    except AttributeError:
+        print("Please provide a string as a paht for the input immate file")
+        raise
+
+    except FileNotFoundError:
+        print("Could not find your file, please try again")
+
+    except OSError:
+        print("The inputfile is not an image")
+        raise
+    except Exception as e:
+        print("General Error:")
+        raise
+
+
+    # breakdown to 3 images
+    r_img = input_img[:, :, 0]
+    g_img = input_img[:, :, 1]
+    b_img = input_img[:, :, 2]
+    max_img=input_img[:, :, 3]
+
 
     # Construct the sharpen filter
     ft = np.zeros((3,3))
-    ft[1,1] = 5
-    ft[0,1]=ft[1,0]=ft[1,2]=ft[2,1]=-2
+    ft[1,1] = 4.5
+    ft[0,1]=ft[1,0]=ft[1,2]=ft[2,1]=-0.75
 
-    # Apply sharpen filter to the image, this function will be complete by milestone 2.
-    # output_img = input_img, i will need to finish this next week
-    skimage.io.imsave("../img/sharpened_img.png", output_img)
+    # Apply sharpen filter to the red image
+    r_output_img = convolve2d(r_img, ft , boundary='symm', mode='same')
+    r_output_img = np.maximum(0, r_output_img)
+    r_output_img = np.minimum(1, r_output_img)
+
+
+    # Apply sharpen filter to the green image
+    g_output_img = convolve2d(g_img, ft , boundary='symm', mode='same')
+    g_output_img = np.maximum(0, g_output_img)
+    g_output_img = np.minimum(1, g_output_img)
+
+
+    # Apply sharpen filter to the blue image
+    b_output_img = convolve2d(b_img, ft , boundary='symm', mode='same')
+    b_output_img = np.maximum(0, b_output_img)
+    b_output_img = np.minimum(1, b_output_img)
+
+    # Stay unchanged for the last dimenssion
+    max_output_img = np.maximum(0, max_img)
+    max_output_img = np.minimum(1, max_img)
+
+    # put back the three sharpened image
+    output_img = np.dstack((r_output_img, g_output_img,b_output_img, max_output_img))
+
+    # Get the input image path and generate the output path
+    index = input_path.rfind("/") + 1
+    output_path = input_path[:index] + "sharpened_" + input_path[index:]
+
+    # save the output image to the same file path as the input image file path
+    skimage.io.imsave(output_path, output_img)
+    # return the output image file path
+    return output_path

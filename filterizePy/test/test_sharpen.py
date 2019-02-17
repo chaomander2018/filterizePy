@@ -5,38 +5,52 @@
 
 # February 2019
 # This script tests the sharpen function of filterizePy package.
-
-
 import numpy as np
 import pandas as pd
 import os
 import imghdr
 import skimage.io
-from PIL import Image
-from filterizePy import sharpen
+from scipy.signal import convolve2d
+import matplotlib.pyplot as plt
+from filterizePy.sharpen import sharpen_image
+import pytest
+from keras.preprocessing.image import img_to_array, load_img
 
-def check_input_type(input_img):
+
+
+test_path = "img/mirror.png"
+
+def test_input_type():
     """
     This function checks the input image format is one of the valid image formats.
-
     """
-    assert imghdr.what(input_img) in ['png','jpeg','gif','bmp','jpg'] , "The input image format is incorrect, try another format"
+    assert imghdr.what("img/mirror.png") in ['png','jpeg','gif','bmp','jpg'], "Not a accepted image file, please try again"
 
-
-def check_output_type(input_img, sharpen(input_img)):
+def test_output_type():
     """
-    This function checks the output image format is one of the valid image formats,
-    and it matches the input image format
+    This function checks the output image format is one of the valid image formats.
     """
-    assert imghdr.what(output_img) in ['png','jpeg','gif','bmp','jpg'] and imghdr.what(output_img)==imghdr.what(input_img),"The output image has a different file format"
+    output_path = sharpen_image("img/mirror.png")
+    assert imghdr.what(output_path) == imghdr.what("img/mirror.png"), "file formats do not match, please try again"
 
 
-def check_output_dimension(input_img, sharpen(input_img)):
+
+def test_output_dimension():
+     """
+     This function checks whether the output image has the same dimension as the input image.
+     """
+     input_img = skimage.io.imread("img/mirror.png")
+     output_img= skimage.io.imread(sharpen_image("img/mirror.png"))
+     in_width, in_height,in_rgb = input_img.shape
+     out_width, out_height,out_rgb = output_img.shape
+     assert in_width == out_width and in_height==out_height, "dimension has changed, something is wrong"
+
+def test_sharpened_effect():
     """
-    This function checks whether the output image has the same dimension as the input image.
+    This function test that the sharpened effect actually implemented on the inpug image.
     """
-    input_img = skimage.io.imread(input_img)
-    output_img= skimage.io.imread(sharpen(input_img))
+    input_img = skimage.io.imread("img/mirror.png")
+    output_img= skimage.io.imread(sharpen_image("img/mirror.png"))
     in_width, in_height,in_rgb = input_img.shape
     out_width, out_height,out_rgb = output_img.shape
-    assert in_width == out_width and in_height==out_height
+    assert in_rgb != out_rgb, "no effect applied, something is wrong"
