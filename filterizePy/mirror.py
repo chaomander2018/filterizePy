@@ -4,15 +4,12 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from mirror.py
-
-# This script tests the mirror function of the filterizePy package.
 # This function mirrors an image.
 # Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
 # Output : A mirrored image in the same format as the input image file type
 
 # Example input path: "../../img/mirror_img.png"
-# Example output path: "../../img/reversed_mirror_img.png"
+# Example output path: "../../img/mirrored_mirror_img.png"
 
 from skimage import io
 import numpy as np
