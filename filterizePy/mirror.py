@@ -9,7 +9,7 @@
 # Output : A mirrored image in the same format as the input image file type
 
 # Example input path: "../../img/mirror_img.png"
-# Example output path: "../../img/reversed_mirror_img.png"
+# Example output path: "../../img/mirrored_mirror_img.png"
 
 from skimage import io
 import numpy as np
