@@ -36,9 +36,11 @@ There are many packages that perform image processing for accessorizing, color e
 * [MDS package 2018](https://github.com/UBC-MDS/InstaR/tree/v4.0)
 * [Zomato Android filter](https://github.com/Zomato/AndroidPhotoFilters)
 
-### Installation and Usage
+### Installation 
 
 `pip install git+https://github.com/UBC-MDS/filterizePy`
+
+### Usage
 
 ```from filterizePy.greenscale import greenscale```
 
