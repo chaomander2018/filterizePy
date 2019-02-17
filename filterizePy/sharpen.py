@@ -4,8 +4,8 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # This script sharpens an image.
-# Input  : A path to an image in .png format
-# Output : A path to a sharpened .png image
+# Input  : A path to an image in either .png, .jpeg, .gif, .bmp, or .jpg format
+# Output : A path to a sharpened .png .jpeg, .gif, .bmp, or .jpgimage
 
 import numpy as np
 import skimage.io
