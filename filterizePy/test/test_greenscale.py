@@ -27,8 +27,8 @@ def test_greenscale_white():
                              [[  0, 230, 0],[  0, 230, 0],[  0, 230,  0]]], dtype = "uint8")
 
     greenscale("../../img/test_img.png")
-    output = skimage.io.imread("../../img/gs_test_img.png")
-    assert np.array_equal(output, gs_test_img), "The greenscale function does not work properly."
+    output_expected = skimage.io.imread("../../img/gs_test_img.png")
+    assert np.array_equal(output_expected, gs_test_img), "The greenscale function does not work properly."
 
 
 def test_greenscale_black():
@@ -37,8 +37,8 @@ def test_greenscale_black():
     gs_test_img_black = np.array([[[0, 0, 0]]], dtype = "uint8")
 
     greenscale("../../img/test_img_black.jpeg")
-    output = skimage.io.imread("../../img/test_img_black.jpeg")
-    assert np.array_equal(output, gs_test_img_black), "The greenscale function does not work properly."
+    output_expected = skimage.io.imread("../../img/test_img_black.jpeg")
+    assert np.array_equal(output_expected, gs_test_img_black), "The greenscale function does not work properly."
 
 
 def test_same_size():
