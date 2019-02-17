@@ -61,7 +61,7 @@ def sharpen_image(input_path):
     r_img = input_img[:, :, 0]
     g_img = input_img[:, :, 1]
     b_img = input_img[:, :, 2]
-    #max_img=input_img[:, :, 3]
+
 
 
     # Construct the sharpen filter
@@ -86,9 +86,6 @@ def sharpen_image(input_path):
     b_output_img = np.maximum(0, b_output_img)
     b_output_img = np.minimum(1, b_output_img)
 
-    # Stay unchanged for the last dimenssion
-    #max_output_img = np.maximum(0, max_img)
-    #max_output_img = np.minimum(1, max_img)
 
     # put back the three sharpened image
     output_img = np.dstack((r_output_img, g_output_img,b_output_img))
