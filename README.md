@@ -37,26 +37,23 @@ This mirror filter function will use convolution to convert the original image t
 `pip install git+https://github.com/UBC-MDS/filterizePy` <br>
 `from filterizePy import *`
 
-1. greenscale(input_path)
+1. **greenscale(input_path)**
+
+Argument:
+- ```input_path```: path to input image
+- *Example*: ```greenscale("./img.jpg")```
+
+2. **sharpen_image(input_path)**
+
+Argument:
+- ```input_path```: path to input image
+- *Example*: ```sharpen_image("./img.jpg")```
+
+3. **mirror(input_path)**
 
 Arguments:
-
-* ```input_path```: path to input image
-* Example: ```greenscale("./img.jpg")```
-
-2. sharpen_image(input_path)
-
-Arguments:
-
-* ```input_path```: path to input image
-* Example: ```sharpen_image("./img.jpg")```
-
-3. mirror(input_path)
-
-Arguments:
-
-* ```input_path```: path to input image
-* Example: ```mirror("./img.jpg")```
+- ```input_path```: path to input image
+- *Example*: ```mirror("./img.jpg")```
 
 
 ## Test instructions:
