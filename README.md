@@ -32,7 +32,7 @@ This sharpen filter highlights edges and fine details in an image.
 This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
 
 
-## Installation and Usage
+### Installation and Usage
 
 `pip install git+https://github.com/UBC-MDS/filterizePy` <br>
 `from filterizePy import *`
@@ -56,16 +56,16 @@ Input Parameter:
 - *Example*: ```mirror("./img.jpg")```
 
 
-## Test instructions:
+### Test instructions:
 
 
-## Package Dependencies:
+### Package Dependencies:
 - PIL
 - skimage
 - numpy
 
 
-## Reference:
+### Reference:
 Image Sources:
 - [filterize.net](https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png)
 - [quickmeme](http://www.quickmeme.com/img/2f/2f516b33efd7251b57bad254f1688131458e13d005972810676ea9622a6c4d29.jpg)
