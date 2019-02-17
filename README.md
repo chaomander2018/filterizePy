@@ -19,7 +19,7 @@ Over 3.5 million photos were shared every minute in 2016 [Deloitte](https://www2
 
 ![theme](img/theme.png)
 
-### Functions  (see details in milestone 1 writeup)
+### Functions 
 
 - #### Green Color Filter `greenscale()`
 This green color filter converts the original image to a green scaled image.
@@ -38,8 +38,13 @@ There are many packages that perform image processing for accessorizing, color e
 
 ### Installation and Usage
 
-`pip install git+https://github.com/UBC-MDS/filterizePy` <br>
-`from filterizePy import *`
+`pip install git+https://github.com/UBC-MDS/filterizePy`
+
+```from filterizePy.greenscale import greenscale```
+
+```from filterizePy.sharpen_image import sharpen_image```
+
+```from filterizePy.mirror import mirror```
 
 1. **greenscale(input_path)**
 
