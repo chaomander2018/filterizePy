@@ -13,6 +13,7 @@ from scipy.signal import convolve2d
 #from keras.preprocessing.image import img_to_array, load_img
 import matplotlib.pyplot as plt
 import os
+from PIL import Image
 
 def sharpen_image(input_path):
     """This function sharpens an image.
@@ -40,7 +41,7 @@ def sharpen_image(input_path):
     # Read the image
     try:
         input_img = skimage.io.imread(input_path)
-
+        # input_img = Image.open(input_path).convert('RGB')
     except AttributeError:
         print("Please provide a string as a paht for the input immate file")
         raise
@@ -60,7 +61,7 @@ def sharpen_image(input_path):
     r_img = input_img[:, :, 0]
     g_img = input_img[:, :, 1]
     b_img = input_img[:, :, 2]
-    max_img=input_img[:, :, 3]
+    #max_img=input_img[:, :, 3]
 
 
     # Construct the sharpen filter
@@ -86,11 +87,11 @@ def sharpen_image(input_path):
     b_output_img = np.minimum(1, b_output_img)
 
     # Stay unchanged for the last dimenssion
-    max_output_img = np.maximum(0, max_img)
-    max_output_img = np.minimum(1, max_img)
+    #max_output_img = np.maximum(0, max_img)
+    #max_output_img = np.minimum(1, max_img)
 
     # put back the three sharpened image
-    output_img = np.dstack((r_output_img, g_output_img,b_output_img, max_output_img))
+    output_img = np.dstack((r_output_img, g_output_img,b_output_img))
 
     # Get the input image path and generate the output path
     index = input_path.rfind("/") + 1
