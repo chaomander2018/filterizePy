@@ -38,6 +38,8 @@ There are many packages that perform image processing for accessorizing, color e
 
 ### Installation 
 
+For installing this package, run the following command on your terminal:
+
 `pip install git+https://github.com/UBC-MDS/filterizePy`
 
 ### Usage
