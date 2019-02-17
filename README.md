@@ -13,6 +13,14 @@ This is a comprehensive image filtering package based in Python.
 |---|---|---|----|
 |github handle|[@jackattackyang](https://github.com/jackattackyang)|[@akanshaVashisth](https://github.com/akanshaVashisth)|[@chaomander2018](https://github.com/chaomander2018)|
 
+<<<<<<< HEAD
+=======
+### Usage and Installation
+
+`pip install git+https://github.com/UBC-MDS/filterizePy` <br>
+`from filterizePy.mirror import <DESIRED FUNCTION>`
+
+>>>>>>> ea09cda31c23815e539322f2bef54de74fd940d8
 ### Overview
 
 Over 3.5 million photos were shared every minute in 2016 [Deloitte](https://www2.deloitte.com/uk/en/pages/press-releases/articles/3-point-5-million-photos-shared-every-minute.html). Visual conversations are a huge part of our lives. All social media feeds are filled with digital stories on Instagram, Facebook, Snapchat, and Twitter. Digital image processing is an important social media metric. We were driven to design a package for image processing and filtering. This is a Collaborative Software Development Project in which we have started working on three image processing filters using convolutions.
