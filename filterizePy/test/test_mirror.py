@@ -4,58 +4,61 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from mirror.py.
-
 # This script tests the mirror function of the filterizePy package.
+# pytest test_mirror.py -s -v
+
 import sys
 sys.path.append('../../')
-from  skimage import io
+import skimage.io
 import numpy as np
 import pytest
 from filterizePy.mirror import mirror
 
-def test_flip_same_size():
-    # checks input and output size
-    input_img = "../../img/test_original.jpg"
-    mirror(input_img)
-    input_img = io.imread('../../img/test_original.jpg')
-    output_img = io.imread('../../img/mirrored_test_original.jpg')
+def setup_module(module):
+    module.Test_mirror.input_img = "../../img/test_original.jpg"
+    mirror(module.Test_mirror.input_img)
+    module.Test_mirror.input_img = skimage.io.imread('../../img/test_original.jpg')
+    module.Test_mirror.output_img = skimage.io.imread('../../img/mirrored_test_original.jpg')
+    print("----------RUNNNINNNG------------")
 
-    assert input_img.shape == output_img.shape, "Input and output dimensions do not match"
+def teardown_module(module):
+    print("----------ENDDDINNNG------------")
 
-def test_flip_column_flip():
-    # first and last column should have the same pixels
-    input_img = "../../img/test_original.jpg"
-    mirror(input_img)
-    input_img = io.imread('../../img/test_original.jpg')
-    output_img = io.imread('../../img/mirrored_test_original.jpg')
-    input_img = np.array(input_img, dtype=np.float64)
-    output_img = np.array(output_img, dtype=np.float64)
+class Test_mirror:
 
-    assert np.all(np.abs(input_img[:,0,:] - output_img[:,-1,:]) < 20), "First and last pixel columns do not match"
+    @pytest.mark.main_
+    def test_flip_same_size(self):
+        # checks input and output size
+        assert self.input_img.shape == self.output_img.shape, "Input and output dimensions do not match"
 
-def test_flip_column_flip_mid():
-    # middle column should stay the same, the cases are different for even and odd dimensioned images
-    input_img = "../../img/test_original.jpg"
-    mirror(input_img)
-    input_img = io.imread('../../img/test_original.jpg')
-    output_img = io.imread('../../img/mirrored_test_original.jpg')
+    @pytest.mark.main_
+    def test_flip_column_flip(self):
+        # first and last column should have the same pixels
+        self.input_img = np.array(self.input_img, dtype=np.float64)
+        self.output_img = np.array(self.output_img, dtype=np.float64)
 
-    input_img = np.array(input_img, dtype=np.float64)
-    output_img = np.array(output_img, dtype=np.float64)
-    m,n,d = input_img.shape
+        assert np.all(np.abs(self.input_img[:,0,:] - self.output_img[:,-1,:]) < 20), "First and last pixel columns do not match"
 
-    if n % 2 == 0:
-        mid = n//2
-        assert np.all(np.abs(input_img[:,mid,:] - output_img[:,mid-1,:]) < 20)
-    else:
-        mid = n//2
-        assert np.all(np.abs(input_img[:,mid,:] - output_img[:,mid,:]) < 20)
+    @pytest.mark.main_
+    def test_flip_column_flip_mid(self):
+        # middle column should stay the same, the cases are different for even and odd dimensioned images
+        self.input_img = np.array(self.input_img, dtype=np.float64)
+        self.output_img = np.array(self.output_img, dtype=np.float64)
+        m,n,d = self.input_img.shape
 
-def test_reversed_input_img():
-    with pytest.raises(FileNotFoundError):
-        mirror("not a file path")
+        if n % 2 == 0:
+            mid = n//2
+            assert np.all(np.abs(self.input_img[:,mid,:] - self.output_img[:,mid-1,:]) < 20)
+        else:
+            mid = n//2
+            assert np.all(np.abs(self.input_img[:,mid,:] - self.output_img[:,mid,:]) < 20)
 
-def test_flip_invalid_input():
-    with pytest.raises(AttributeError):
-        mirror(123)
+    @pytest.mark.raise_
+    def test_reversed_input_img(self):
+        with pytest.raises(FileNotFoundError):
+            mirror("not a file path")
+
+    @pytest.mark.raise_
+    def test_flip_invalid_input(self):
+        with pytest.raises(AttributeError):
+            mirror(123)
