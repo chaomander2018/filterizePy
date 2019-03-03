@@ -1,0 +1,19 @@
+[
+  "filterizePy/test/test_greenscale.py::test_greenscale_white",
+  "filterizePy/test/test_greenscale.py::test_greenscale_black",
+  "filterizePy/test/test_greenscale.py::test_same_size",
+  "filterizePy/test/test_greenscale.py::test_input_img",
+  "filterizePy/test/test_greenscale.py::test_invalid_input",
+  "filterizePy/test/test_greenscale.py::test_invalid_input_type_error",
+  "filterizePy/test/test_mirror.py::Test_mirror::test_flip_same_size",
+  "filterizePy/test/test_mirror.py::Test_mirror::test_flip_column_flip",
+  "filterizePy/test/test_mirror.py::Test_mirror::test_flip_column_flip_mid",
+  "filterizePy/test/test_mirror.py::Test_mirror::test_reversed_input_1",
+  "filterizePy/test/test_mirror.py::Test_mirror::test_mirror_invalid_input_2",
+  "filterizePy/test/test_sharpen.py::test_input_type",
+  "filterizePy/test/test_sharpen.py::test_output_type",
+  "filterizePy/test/test_sharpen.py::test_output_dimension",
+  "filterizePy/test/test_sharpen.py::test_sharpened_effect",
+  "filterizePy/test/test_sharpen.py::test_sharpen_input_1",
+  "filterizePy/test/test_sharpen.py::test_sharpen_invalid_input_2"
+]
