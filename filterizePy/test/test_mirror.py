@@ -8,17 +8,18 @@
 # pytest test_mirror.py -s -v
 
 import sys
-sys.path.append('../../')
+import os
+sys.path.append(os.getcwd())
 import skimage.io
 import numpy as np
 import pytest
 from filterizePy.mirror import mirror
 
 def setup_module(module):
-    module.Test_mirror.input_img = "../../img/test_original.jpg"
+    module.Test_mirror.input_img = "test_img/test_original.jpg"
     mirror(module.Test_mirror.input_img)
-    module.Test_mirror.input_img = skimage.io.imread('../../img/test_original.jpg')
-    module.Test_mirror.output_img = skimage.io.imread('../../img/mirrored_test_original.jpg')
+    module.Test_mirror.input_img = skimage.io.imread('test_img/test_original.jpg')
+    module.Test_mirror.output_img = skimage.io.imread('test_img/mirrored_test_original.jpg')
     print("----------RUNNNINNNG------------")
 
 def teardown_module(module):
@@ -54,11 +55,11 @@ class Test_mirror:
             assert np.all(np.abs(self.input_img[:,mid,:] - self.output_img[:,mid,:]) < 20)
 
     @pytest.mark.raise_
-    def test_reversed_input_img(self):
+    def test_reversed_input_1(self):
         with pytest.raises(FileNotFoundError):
             mirror("not a file path")
 
     @pytest.mark.raise_
-    def test_flip_invalid_input(self):
+    def test_mirror_invalid_input_2(self):
         with pytest.raises(AttributeError):
             mirror(123)

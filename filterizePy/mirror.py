@@ -24,12 +24,15 @@ def mirror(input_path):
     except AttributeError:
         print("Please entire a valid path as a string")
         raise
-    except Exception as error:
-        print(error)
-        raise
+    # except Exception as error:
+    #     print(error)
+    #     raise
 
     # Regex that customizes output file name
     index = input_path.rfind("/") + 1
     output_path = input_path[:index] + "mirrored_" + input_path[index:]
 
     io.imsave(output_path, input_img[:,::-1,:])
+
+# if __name__ == "__main__":
+#     mirror(sys.argv[1])

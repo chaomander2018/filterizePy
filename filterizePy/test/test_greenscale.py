@@ -26,39 +26,36 @@ def test_greenscale_white():
                              [[  0, 230, 0],[  0, 230, 0],[  0, 230,  0]],
                              [[  0, 230, 0],[  0, 230, 0],[  0, 230,  0]]], dtype = "uint8")
 
-    greenscale("../../img/test_img.png")
-    output_expected = skimage.io.imread("../../img/gs_test_img.png")
+    greenscale("test_img/test_img.png")
+    output_expected = skimage.io.imread("test_img/gs_test_img.png")
     assert np.array_equal(output_expected, gs_test_img), "The greenscale function does not work properly."
-
 
 def test_greenscale_black():
     # Black image testing
     test_img_black = np.array([[[0, 0, 0]]], dtype = "uint8")
     gs_test_img_black = np.array([[[0, 0, 0]]], dtype = "uint8")
 
-    greenscale("../../img/test_img_black.jpeg")
-    output_expected = skimage.io.imread("../../img/test_img_black.jpeg")
+    greenscale("test_img/test_img_black.jpeg")
+    output_expected = skimage.io.imread("test_img/test_img_black.jpeg")
     assert np.array_equal(output_expected, gs_test_img_black), "The greenscale function does not work properly."
-
 
 def test_same_size():
     # Checking input and output size
-    input_img = "../../img/test_original.jpg"
+    input_img = "test_img/test_original.jpg"
     greenscale(input_img)
-    input_img = skimage.io.imread('../../img/test_original.jpg')
-    output_img = skimage.io.imread('../../img/gs_test_original.jpg')
+    input_img = skimage.io.imread('test_img/test_original.jpg')
+    output_img = skimage.io.imread('test_img/gs_test_original.jpg')
     assert input_img.shape == output_img.shape, "Input and output dimensions do not match"
 
-
 def check_output_type():
-    input_img = "../../img/test_original.jpg"
+    input_img = "test_img/test_original.jpg"
     greenscale(input_img)
-    input_img = skimage.io.imread('../../img/test_original.jpg')
-    output_img = skimage.io.imread('../../img/gs_test_original.jpg')
-    assert imghdr.what(output_img) in ['png','jpeg','gif','bmp','jpg'] and imghdr.what(output_img)==imghdr.what(input_img),"The output image has a different file format"
+    input_img = skimage.io.imread('test_img/test_original.jpg')
+    output_img = skimage.io.imread('test_img/gs_test_original.jpg')
+    assert imghdr.what(output_img) in ['png','jpeg','gif','bmp','jpg'] and imghdr.what(output_img)==imghdr.what(input_img),"The output image has a different file formatest_img"
 
 def test_input_img():
-    input_img = "../../img/test_original.jpg"
+    input_img = "test_img/test_original.jpg"
     greenscale(input_img)
     with pytest.raises(FileNotFoundError):
         greenscale("not a file path")

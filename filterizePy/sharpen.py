@@ -43,19 +43,20 @@ def sharpen_image(input_path):
     try:
         input_img = skimage.io.imread(input_path)
         # input_img = Image.open(input_path).convert('RGB')
-    except AttributeError:
-        print("Please provide a string as a paht for the input immate file")
-        raise
-
     except FileNotFoundError:
         print("Could not find your file, please try again")
+        raise
+    except AttributeError:
+        print("Please provide a string as a paht for the input file")
+        raise
 
-    except OSError:
-        print("The inputfile is not an image")
-        raise
-    except Exception as e:
-        print("General Error:")
-        raise
+    #
+    # except OSError:
+    #     print("The inputfile is not an image")
+    #     raise
+    # except Exception as e:
+    #     print("General Error:")
+    #     raise
 
 
     # breakdown to 3 images
