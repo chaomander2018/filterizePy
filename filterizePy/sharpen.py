@@ -4,8 +4,8 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # This script sharpens an image.
-# Input  : A path to an image in .png format
-# Output : A path to a sharpened .png image
+# Input  : A path to an image in either .png, .jpeg, .gif, .bmp, or .jpg format
+# Output : A path to a sharpened .png .jpeg, .gif, .bmp, or .jpgimage
 
 import numpy as np
 import skimage.io
@@ -13,6 +13,8 @@ from scipy.signal import convolve2d
 #from keras.preprocessing.image import img_to_array, load_img
 import matplotlib.pyplot as plt
 import os
+import sys
+from PIL import Image
 
 def sharpen_image(input_path):
     """This function sharpens an image.
@@ -23,7 +25,7 @@ def sharpen_image(input_path):
     Parameters
     ----------
     input_img: string
-    A file path to a image. The image should be either .png, .jpeg,.gif, .bmp, or .jpg.
+    A file path to a image. The image should be either .png, .jpeg, .gif, .bmp, or .jpg.
 
     Returns
     -------
@@ -34,32 +36,34 @@ def sharpen_image(input_path):
     Example
     -------
     sharpen("../img/test_image.png")
+
+    Returns"../img/sharpened_test_image.png"
     """
+    # Read the image
     try:
         input_img = skimage.io.imread(input_path)
-
-    except AttributeError:
-        print("Please provide a string as a paht for the input immate file")
-        raise
-
+        # input_img = Image.open(input_path).convert('RGB')
     except FileNotFoundError:
         print("Could not find your file, please try again")
-
-    except OSError:
-        print("The inputfile is not an image")
         raise
-    except Exception as e:
-        print("General Error:")
+    except AttributeError:
+        print("Please provide a string as a paht for the input file")
         raise
 
+    #
+    # except OSError:
+    #     print("The inputfile is not an image")
+    #     raise
+    # except Exception as e:
+    #     print("General Error:")
+    #     raise
 
-    # Read the image
-    #input_img = plt.imread(input_path) # read in the image
 
     # breakdown to 3 images
     r_img = input_img[:, :, 0]
     g_img = input_img[:, :, 1]
     b_img = input_img[:, :, 2]
+
 
 
     # Construct the sharpen filter
@@ -92,7 +96,7 @@ def sharpen_image(input_path):
     index = input_path.rfind("/") + 1
     output_path = input_path[:index] + "sharpened_" + input_path[index:]
 
-
+    # save the output image to the same file path as the input image file path
     skimage.io.imsave(output_path, output_img)
-    #output_path = path+output_name
+    # return the output image file path
     return output_path

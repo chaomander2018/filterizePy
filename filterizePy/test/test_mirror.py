@@ -4,50 +4,62 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from mirror.py.
-
 # This script tests the mirror function of the filterizePy package.
+# pytest test_mirror.py -s -v
 
-from skimage import io
-import pytest
+import sys
+import os
+sys.path.append(os.getcwd())
+import skimage.io
 import numpy as np
-from filterize import mirror
+import pytest
+from filterizePy.mirror import mirror
 
-input_img = io.imread('../img/input_image.png')
-mirror(input_img)
-output_img = io.imread('../img/mirror_img.png')
+def setup_module(module):
+    module.Test_mirror.input_img = "test_img/test_original.jpg"
+    mirror(module.Test_mirror.input_img)
+    module.Test_mirror.input_img = skimage.io.imread('test_img/test_original.jpg')
+    module.Test_mirror.output_img = skimage.io.imread('test_img/mirrored_test_original.jpg')
+    print("----------RUNNNINNNG------------")
 
-def test_flip_same_size(input_img, output_img):
-    # checks input and output size
-    assert input_img.shape == output_img.shape, "Input and output dimensions do not match"
+def teardown_module(module):
+    print("----------ENDDDINNNG------------")
 
-def test_flip_column_flip(input_img, output_img):
-    # first and last column should have the same pixels
-    assert np.array_equal(input_img[:,0,:], output_img[:,-1,:]), "First and last pixel columns do not match"
+class Test_mirror:
 
-def test_flip_column_flip_mid(input_img, output_img):
-    # middle column should stay the same, the cases are different for even and odd dimensioned images
-    m,n,d = input_img.shape
+    @pytest.mark.main_
+    def test_flip_same_size(self):
+        # checks input and output size
+        assert self.input_img.shape == self.output_img.shape, "Input and output dimensions do not match"
 
-    if n % 2 == 0:
-        mid = n//2
-        assert np.array_equal(input_img[:,mid,:], output_img[:,mid-1,:])
-    else:
-        mid = n//2
-        assert np.array_equal(input_img[:,mid,:], output_img[:,mid,:]), "Error in middle transform column"
+    @pytest.mark.main_
+    def test_flip_column_flip(self):
+        # first and last column should have the same pixels
+        self.input_img = np.array(self.input_img, dtype=np.float64)
+        self.output_img = np.array(self.output_img, dtype=np.float64)
 
-def test_flip_file_path():
-    with pytest.raises(FileNotFoundError):
-        mirror("not a file path")
+        assert np.all(np.abs(self.input_img[:,0,:] - self.output_img[:,-1,:]) < 20), "First and last pixel columns do not match"
 
-def test_flip_invalid_input():
-    with pytest.raises(AttributeError):
-        mirror(123)
+    @pytest.mark.main_
+    def test_flip_column_flip_mid(self):
+        # middle column should stay the same, the cases are different for even and odd dimensioned images
+        self.input_img = np.array(self.input_img, dtype=np.float64)
+        self.output_img = np.array(self.output_img, dtype=np.float64)
+        m,n,d = self.input_img.shape
 
-def test_flip_invalid_input():
-    with pytest.raises(TypeError):
-        mirror()
+        if n % 2 == 0:
+            mid = n//2
+            assert np.all(np.abs(self.input_img[:,mid,:] - self.output_img[:,mid-1,:]) < 20)
+        else:
+            mid = n//2
+            assert np.all(np.abs(self.input_img[:,mid,:] - self.output_img[:,mid,:]) < 20)
 
-def test_flip_invalid_input():
-    with pytest.raises(SyntaxError):
-        mirror(,)
+    @pytest.mark.raise_
+    def test_reversed_input_1(self):
+        with pytest.raises(FileNotFoundError):
+            mirror("not a file path")
+
+    @pytest.mark.raise_
+    def test_mirror_invalid_input_2(self):
+        with pytest.raises(AttributeError):
+            mirror(123)
