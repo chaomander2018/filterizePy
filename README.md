@@ -1,4 +1,4 @@
-<img src="https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png" align="right" height="190" width="220"/>
+<img src="img/logo.png" align="right" height="190" width="220"/>
 
 [![Build Status](https://travis-ci.org/UBC-MDS/filterizePy.svg?branch=master)](https://travis-ci.org/UBC-MDS/filterizePy)
 
