@@ -1,7 +1,10 @@
-<img src="https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png" align="right" height="190" width="220"/>
+# filterizePy
 
-## filterizePy
-This is a comprehensive image filtering package based in Python.
+<img src="img/logo.png" align="right" height="190" width="220"/>
+
+[![Build Status](https://travis-ci.org/UBC-MDS/filterizePy.svg?branch=master)](https://travis-ci.org/UBC-MDS/filterizePy)
+
+This is an image filtering package based in Python.
 
 **Date:** 2019-02-16
 
@@ -15,22 +18,9 @@ This is a comprehensive image filtering package based in Python.
 
 ### Overview
 
-Over 3.5 million photos were shared every minute in 2016 [(Deloitte)](https://www2.deloitte.com/uk/en/pages/press-releases/articles/3-point-5-million-photos-shared-every-minute.html). Visual conversations are a huge part of our lives. All social media feeds are filled with digital stories on Instagram, Facebook, Snapchat, and Twitter. Digital image processing is an important social media metric. We were driven to design a package for image processing and filtering. This is a Collaborative Software Development Project in which we have started working on three image processing filters using convolutions.
+Over 3.5 million photos were shared every minute in 2016 [Deloitte](https://www2.deloitte.com/uk/en/pages/press-releases/articles/3-point-5-million-photos-shared-every-minute.html). Visual conversations are a huge part of our lives. All social media feeds are filled with digital stories on Instagram, Facebook, Snapchat, and Twitter. Digital image processing is an important social media metric. We were driven to design a package for image processing and filtering. This is a Collaborative Software Development Project in which we have started working on three image processing filters using convolutions.
 
-### Functions
-
-- #### Green Color Filter `greenscale()`
-This green color filter converts the original image to a green scaled image.
-Please see the original image and processed image below.
-<img src="img/greenscale.png" style="width:700px;height:200px">
-
-- #### Sharpen Filter `sharpen_image()`
-This sharpen filter highlights edges and fine details in an image.
-![](img/sharpen.png)
-
-- #### Mirror Filter `mirror()`
-This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
-![](img/mirror.png)
+![theme](img/theme.png)
 
 ### Python Ecosystem
 There are many packages that perform image processing for accessorizing, color enhancement or special effects. In fact, the idea for this project came from the MDS cohort from last year. The intent behind this project is to build onto the intuition behind convolutional neural networks and how image filtering works while working on a relevant and practical project.
@@ -45,28 +35,42 @@ For installing this package, run the following command on your terminal:
 
 ### Usage
 
-`from filterizePy.greenscale import greenscale`
+```from filterizePy.greenscale import greenscale```
 
-`from filterizePy.sharpen_image import sharpen_image`
+```from filterizePy.sharpen_image import sharpen_image```
 
-`from filterizePy.mirror import mirror`
+```from filterizePy.mirror import mirror```
 
-**greenscale(input_path)**
+##### Green Color Filter `greenscale()`
+This green color filter converts the original image to a green scaled image.
+Please see the original image and processed image below.
 
-  - `input_path`: Input image path
-  - *Example*: `greenscale.greenscale(input_path)`
+ `greenscale(input_path)`
+ - Argument: `input_path`, path to the input image
+ - Expected Output: `"img/toy_img/greenscale_toy.png"`
+ - Example Usage:`greenscale("img/toy_img/gs_greenscale_toy.png")`
+
+ ![insert green filter before and after](img/greenscale_eff.png)
 
 
-**sharpen_image(input_path)**
+##### Sharpen Filter `sharpen_image()`
+ This sharpen filter highlights edges and fine details in an image.
+`sharpen(input_path)`
+ - Argument: `input_path`, path to the input image
+ - Expected Output: `img/toy_img/sharpened_sharpen_toy.png`
+ - Example Usage:`sharpen("img/toy_img/sharpen_toy.png")`
 
-  - `input_path`: Input image path
-  - *Example*: `sharpen.sharpen_image(input_path)`
+ ![insert a cropped image before and after](img/sharpen_eff.png)
 
+##### Mirror Filter `mirror()`
+ This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
 
-**mirror(input_path)**
+`mirror(input_path)`
+ - Argument: `input_path`, path to the input image
+ - Expected Output: `img/toy_img/mirrored_mirror_toy.png`
+ - Example Usage:`mirror("img/toy_img/mirror_toy.png")`
 
-  - `input_path`: Input image path
-  - *Example*: `mirror.mirror(input_path)`
+ ![insert flag image before and after](img/mirror_eff.png)
 
 ### Testing
 

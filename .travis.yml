@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.5"
+intall:
+  - pip install tensorflow
+  - pip install -r requirements.txt
+script:
+  - pytest
